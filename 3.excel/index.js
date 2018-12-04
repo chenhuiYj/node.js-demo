@@ -14,10 +14,10 @@ ejsExcel.getExcelArr(exBuf).then(exlJson => {
 //导出js的路径
     console.log(workSheets)
     let newfilepath = path.join(__dirname, "/test.js");
+    //从第二行开始插入，避免连表头也插入_data里面
+    workSheets.splice(0,1);
 //遍历第一张表的的每一行数据
     workSheets.forEach((item, index) => {
-//从第二行开始插入，避免连表头也插入_data里面
-
 //往_data插入单元格个值，item[0]相当于excel中的id，item[1]就是excel中的name
         _data.push({
             id: item[0],
