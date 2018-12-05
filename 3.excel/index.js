@@ -22,7 +22,6 @@ ejsExcel.getExcelArr(exBuf).then(exlJson => {
             id: item[0],
             name: item[1],
         })
-
     });
 //写入js文件
     fs.writeFileSync(newfilepath, 'let _skillData=' + JSON.stringify(_data) + ';export {_skillData}');
