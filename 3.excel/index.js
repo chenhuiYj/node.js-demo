@@ -12,7 +12,6 @@ ejsExcel.getExcelArr(exBuf).then(exlJson => {
 //获取excel第一张表 sheet1
     let workSheets = workBook[0];
 //导出js的路径
-    console.log(workSheets)
     let newfilepath = path.join(__dirname, "/test.js");
     //从第二行开始插入，避免连表头也插入_data里面
     workSheets.splice(0,1);
@@ -25,11 +24,9 @@ ejsExcel.getExcelArr(exBuf).then(exlJson => {
         })
 
     });
-    console.log(_data.length)
 //写入js文件
     fs.writeFileSync(newfilepath, 'let _skillData=' + JSON.stringify(_data) + ';export {_skillData}');
 }).catch(error => {
 //打印获取失败信息
-    console.log("读取错误!");
     console.log(error);
 });
