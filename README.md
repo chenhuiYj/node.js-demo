@@ -6,3 +6,6 @@
 读取excel
 ## 4.fnIndex
 生成序号
+
+## %%webTest
+简单的 web 交互
