@@ -19,7 +19,7 @@ fs.readFile('./4.fnIndex/fn.js', (err, data) => {
     }
 })
 
-fs.readFile('./README.md', (err, data) => {
+fs.readFile('./README_TEST.md', (err, data) => {
     if (err) {
         console.error(err);
     }
